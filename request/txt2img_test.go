@@ -11,7 +11,7 @@ import (
 )
 
 func TestClient_SyncTxt2Img(t *testing.T) {
-	client, err := NewClient(os.Getenv("API_KEY"))
+	client, err := NewClient(os.Getenv("API_KEY"), "")
 	if err != nil {
 		t.Error(err)
 		return
@@ -31,7 +31,7 @@ func TestClient_SyncTxt2Img(t *testing.T) {
 }
 
 func TestClient_SyncTxt2ImgWithLora(t *testing.T) {
-	client, err := NewClient(os.Getenv("API_KEY"))
+	client, err := NewClient(os.Getenv("API_KEY"), "")
 	if err != nil {
 		t.Error(err)
 		return
@@ -51,7 +51,7 @@ func TestClient_SyncTxt2ImgWithLora(t *testing.T) {
 }
 
 func TestClient_SyncTxt2ImgControlNet(t *testing.T) {
-	client, err := NewClient(os.Getenv("API_KEY"))
+	client, err := NewClient(os.Getenv("API_KEY"), "")
 	if err != nil {
 		t.Error(err)
 		return

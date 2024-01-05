@@ -12,7 +12,7 @@ import (
 )
 
 func (c *Client) Txt2Img(ctx context.Context, request *types.Txt2ImgRequest) (*types.AsyncResponse, error) {
-	responseData, err := doRequest[types.Txt2ImgRequest, types.AsyncResponse](ctx, c.httpCli, http.MethodPost, BaseURL+"/txt2img", c.apiKey, nil, request)
+	responseData, err := doRequest[types.Txt2ImgRequest, types.AsyncResponse](ctx, c.httpCli, http.MethodPost, c.apiPath+"/txt2img", c.apiKey, nil, request)
 	if err != nil {
 		return nil, err
 	}

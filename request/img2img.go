@@ -8,7 +8,7 @@ import (
 )
 
 func (c *Client) Img2Img(ctx context.Context, request *types.Img2ImgRequest) (*types.AsyncResponse, error) {
-	responseData, err := doRequest[types.Img2ImgRequest, types.AsyncResponse](ctx, c.httpCli, http.MethodPost, BaseURL+"/img2img", c.apiKey, nil, request)
+	responseData, err := doRequest[types.Img2ImgRequest, types.AsyncResponse](ctx, c.httpCli, http.MethodPost, c.apiPath+"/img2img", c.apiKey, nil, request)
 	if err != nil {
 		return nil, err
 	}

@@ -10,7 +10,7 @@ import (
 )
 
 func TestClient_Models(t *testing.T) {
-	client, err := NewClient(os.Getenv("API_KEY"))
+	client, err := NewClient(os.Getenv("API_KEY"), "")
 	if err != nil {
 		t.Error(err)
 		return

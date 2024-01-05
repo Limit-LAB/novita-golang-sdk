@@ -11,7 +11,7 @@ import (
 )
 
 func TestClient_SyncImg2Img(t *testing.T) {
-	client, err := NewClient(os.Getenv("API_KEY"))
+	client, err := NewClient(os.Getenv("API_KEY"), "")
 	if err != nil {
 		t.Error(err)
 		return
@@ -37,7 +37,7 @@ func TestClient_SyncImg2Img(t *testing.T) {
 }
 
 func TestClient_SyncImg2imgControlNet(t *testing.T) {
-	client, err := NewClient(os.Getenv("API_KEY"))
+	client, err := NewClient(os.Getenv("API_KEY"), "")
 	if err != nil {
 		t.Error(err)
 		return

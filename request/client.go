@@ -29,20 +29,24 @@ type ClientInterface interface {
 	Models(context.Context, ...WithModelOption) (map[types.ModelType]*types.Model, error)
 }
 
-const BaseURL = "https://api.novita.ai/v2"
-
 type Client struct {
 	apiKey     string
+	apiPath    string
 	httpCli    *http.Client
 	modelCache types.ModelList
 }
 
-func NewClient(apiKey string) (*Client, error) {
+func NewClient(apiKey, apiPath string) (*Client, error) {
+	const baseURL = "https://api.novita.ai/v2"
 	if apiKey == "" {
 		return nil, errors.New("apiKey is not set, you can get api key refer to https://docs.novita.ai/get-started")
 	}
+	if apiPath == "" {
+		apiPath = baseURL
+	}
 	client := &Client{
-		apiKey: apiKey,
+		apiPath: apiPath,
+		apiKey:  apiKey,
 		httpCli: &http.Client{
 			Timeout: 30 * time.Second,
 		},

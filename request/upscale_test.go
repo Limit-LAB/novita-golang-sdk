@@ -11,7 +11,7 @@ import (
 )
 
 func TestClient_SyncUpscale(t *testing.T) {
-	client, err := NewClient(os.Getenv("API_KEY"))
+	client, err := NewClient(os.Getenv("API_KEY"), "")
 	if err != nil {
 		t.Error(err)
 		return
