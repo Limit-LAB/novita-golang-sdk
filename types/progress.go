@@ -29,10 +29,10 @@ func (p ProgressResponseStatusCode) IsFinish() bool {
 
 const (
 	Initializing ProgressResponseStatusCode = 0
-	Running                                 = 1
-	Successful                              = 2
-	Failed                                  = 3
-	Timeout                                 = 4
+	Running      ProgressResponseStatusCode = 1
+	Successful   ProgressResponseStatusCode = 2
+	Failed       ProgressResponseStatusCode = 3
+	Timeout      ProgressResponseStatusCode = 4
 )
 
 type ProgressRequest struct {

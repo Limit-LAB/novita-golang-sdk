@@ -8,7 +8,7 @@ import (
 )
 
 func (c *Client) Upscale(ctx context.Context, request *types.UpscaleRequest) (*types.AsyncResponse, error) {
-	responseData, err := doRequest[types.UpscaleRequest, types.AsyncResponse](ctx, c.httpCli, http.MethodPost, c.apiPath+"/upscale", c.apiKey, nil, request)
+	responseData, err := doRequest[types.UpscaleRequest, types.AsyncResponse](ctx, c.httpCli, http.MethodPost, c.apiPath+"/v2/upscale", c.apiKey, nil, request)
 	if err != nil {
 		return nil, err
 	}

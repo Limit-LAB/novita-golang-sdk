@@ -27,6 +27,8 @@ type ClientInterface interface {
 	SyncUpscale(context.Context, *types.Img2ImgRequest, ...WithGenerateImageOption) (*types.ProgressResponse, error)
 	// Models List all models, including checkpoint, lora, vae and other models. Return types info by type.
 	Models(context.Context, ...WithModelOption) (map[types.ModelType]*types.Model, error)
+	// MergeFace Merge faces from request.
+	MergeFace(context.Context, *types.MergeFaceRequest) (*types.MergeFaceResponse, error)
 }
 
 type Client struct {
@@ -37,7 +39,7 @@ type Client struct {
 }
 
 func NewClient(apiKey, apiPath string) (*Client, error) {
-	const baseURL = "https://api.novita.ai/v2"
+	const baseURL = "https://api.novita.ai"
 	if apiKey == "" {
 		return nil, errors.New("apiKey is not set, you can get api key refer to https://docs.novita.ai/get-started")
 	}

@@ -22,7 +22,7 @@ type Img2ImgRequest struct {
 	Steps                  int               `json:"steps,omitempty"`
 	Width                  int               `json:"width,omitempty"`
 	Height                 int               `json:"height,omitempty"`
-	RestoreFaces           bool              `json:"restore_face,omitemptys"`
+	RestoreFaces           bool              `json:"restore_face,omitempty"`
 	SDVae                  string            `json:"sd_vae,omitempty"`
 	ClipSkip               int               `json:"clip_skip,omitempty"`
 	ControlNetUnits        []*ControlNetUnit `json:"controlnet_units,omitempty"`

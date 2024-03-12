@@ -10,7 +10,7 @@ import (
 func (c *Client) Models(ctx context.Context, opts ...WithModelOption) (types.ModelList, error) {
 	modelOpt := newModelOption(opts...)
 	if c.modelCache == nil || len(c.modelCache) == 0 || modelOpt.Refresh {
-		responseData, err := doRequest[*types.ModelRequest, types.ModelsResponse](ctx, c.httpCli, http.MethodGet, c.apiPath+"/models", c.apiKey, nil, nil)
+		responseData, err := doRequest[*types.ModelRequest, types.ModelsResponse](ctx, c.httpCli, http.MethodGet, c.apiPath+"/v2/models", c.apiKey, nil, nil)
 		if err != nil {
 			return nil, err
 		}
